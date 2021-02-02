@@ -1,0 +1,16 @@
+POST http://192.168.31.76:8765/actuator/shutdown
+Content-Type: application/json
+#空一行
+
+{
+
+}
+
+
+###
+#REST CLIENT插件
+#cmd shift p  ==>rest client send request
+#shutdown 是post请求
+#pom.xml *-actuator 除了优雅关闭tomcat还能得到容器的实时信息
+#application.yml配置
+

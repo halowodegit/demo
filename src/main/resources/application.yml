@@ -1,0 +1,34 @@
+server:
+  port: 8765
+  shutdown: graceful
+
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+  devtools:       #vscode热部署配置
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: WEB-INF//**
+  freemarker:
+    cache: false
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown  #path:port/actuator/shutdown    也可以是'*'启动所有，例如beans，mappings等，其中shutdown为POST请求
+
+demo:
+  test:
+    name: monike
+    age: 22
+
+logging:
+  level:
+    root: debug
